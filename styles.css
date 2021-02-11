@@ -1,0 +1,260 @@
+/* ******** ******** FONTS ******** ******** */
+
+@font-face {
+  font-family: 'MadeMirage';
+  src: url(./fonts/MadeMirageBlack.otf);
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'MadeMirage';
+  src: url(./fonts/MadeMirageBold.otf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'MadeMirage';
+  src: url(./fonts/MadeMirageMedium.otf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'MadeMirage';
+  src: url(./fonts/MadeMirageRegular.otf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'MadeMirage';
+  src: url(./fonts/MadeMirageThin.otf);
+  font-weight: 100;
+}
+
+/* ******** ******** ANIMATIONS ******** ******** */
+
+@keyframes imageAnimation { 
+  0% { opacity: 0; animation-timing-function: ease-in; }
+  10% { opacity: 1; animation-timing-function: ease-out; }
+  21% { opacity: 1 }
+  40% { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+@keyframes finalImageAnimation { 
+  0% { opacity: 0; animation-timing-function: ease-in; }
+  75% { opacity: 0 }
+  85% { opacity: 1; animation-timing-function: ease-out;}
+  100% { opacity: 1 }
+}
+
+@keyframes titleAnimation { 
+  0% { opacity: 0; animation-timing-function: ease-in; }
+  12% { opacity: 1; animation-timing-function: ease-out; }
+  100% { opacity: 1 }
+}
+
+@keyframes logoAnimation { 
+  0% { opacity: 1 }
+  100% { opacity: 1 }
+}
+
+/* ******** ******** GLOBAL ******** ******** */
+
+body, * {
+  font-family: 'MadeMirage';
+  margin: 0;
+  padding: 0;
+}
+
+/* ******** ******** STYLES ******** ******** */
+
+.image-slideshow,
+.image-slideshow:after { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0; 
+}
+
+.image-slideshow li {
+  padding: 0;
+}
+
+.image-slideshow li a { 
+  margin: 0px; 
+  display: block; 
+  width: 100%; 
+  height: 100%; 
+}
+
+.image-slideshow li span,
+.image-slideshow li div { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+}
+
+.image-slideshow li span { 
+  animation: imageAnimation 24s ease-in forwards;
+  -webkit-animation: imageAnimation 24s ease-in forwards;
+}
+
+.image-slideshow li span.final-slide { 
+  z-index: 250;
+  animation: finalImageAnimation 24s ease-in forwards;
+  -webkit-animation: finalImageAnimation 24s ease-in forwards;
+}
+
+.image-slideshow li div { 
+  z-index: 400;
+  bottom: 30px;
+  text-align: center;
+  color: #fff;
+  animation: titleAnimation 3s ease-in forwards; 
+  -webkit-animation: titleAnimation 3s ease-in forwards;
+}
+
+.image-slideshow li img { 
+  z-index: 500;
+  position: absolute;
+  height: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: logoAnimation 24s ease-in forwards; 
+  -webkit-animation: logoAnimation 24s ease-in forwards;
+}
+
+.image-slideshow li div h3 { 
+  font-family: 'MadeMirage';
+  font-size: 30px;
+  font-weight: 700;
+  left: 50%;
+  padding: 0;
+  position: absolute;
+  line-height: 40px; 
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image-slideshow li:nth-child(1) span { 
+  background-image: url(./images/desktop/marinada_homes_01.jpg);
+}
+.image-slideshow li:nth-child(2) span { 
+  background-image: url(./images/desktop/marinada_homes_02.jpg);
+  animation-delay: 6s; 
+}
+.image-slideshow li:nth-child(3) span { 
+  background-image: url(./images/desktop/marinada_homes_03.jpg);
+  animation-delay: 12s; 
+}
+.image-slideshow li:nth-child(4) span { 
+  background-image: url(./images/desktop/marinada_homes_04.jpg);
+  animation-delay: 18s; 
+}
+.image-slideshow li:nth-child(5) span.final-slide { 
+  background-image: url(./images/desktop/marinada_homes_05.jpg);
+  animation-delay: 6s; 
+}
+
+.image-slideshow li:nth-child(5) div { 
+  animation-delay: 27s; 
+}
+
+.image-slideshow li:nth-child(5) div.copyright{ 
+  animation-delay: 26s; 
+}
+
+.image-slideshow li:nth-child(1) img.logo-top,
+.image-slideshow li:nth-child(1) img.logo-top-mob { 
+  top: 0;
+  animation-delay: 3s; 
+}
+.image-slideshow li:nth-child(1) img.logo-bottom,
+.image-slideshow li:nth-child(1) img.logo-bottom-mob { 
+  bottom: 0;
+  animation-delay: 4.2s; 
+}
+
+.no-cssanimations .image-slideshow li span {
+	opacity: 1;
+}
+
+.logo-top-mob,
+.logo-bottom-mob {
+  display: none
+  }
+
+  .copyright-text {
+    bottom: 12vh;
+    color: #fff;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    font-weight: 100;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    transform: rotate(-90deg);
+    animation: titleAnimation 4s ease-in forwards; 
+    -webkit-animation: titleAnimation 4s ease-in forwards;
+  }
+
+/* ******** ******** MEDIA QUERIES ******** ******** */
+
+@media screen and (max-width: 600px) { 
+  .image-slideshow li div h3 { 
+    font-size: 22px; 
+    line-height: 28px;
+    width: 100vw;
+  }
+
+  .image-slideshow li:nth-child(1) span { 
+    background-image: url(./images/mobile/marinada_homes_mobile_01.jpg);
+  }
+
+  .image-slideshow li:nth-child(2) span { 
+    background-image: url(./images/mobile/marinada_homes_mobile_02.jpg);
+  }
+
+  .image-slideshow li:nth-child(3) span { 
+    background-image: url(./images/mobile/marinada_homes_mobile_03.jpg);
+  }
+
+  .image-slideshow li:nth-child(4) span { 
+    background-image: url(./images/mobile/marinada_homes_mobile_04.jpg);
+  }
+
+  .image-slideshow li:nth-child(5) span { 
+    background-image: url(./images/mobile/marinada_homes_mobile_05.jpg);
+  }
+
+  .logo-top-mob,
+  .logo-bottom-mob {
+    display: block;
+  }
+
+  .image-slideshow li img.logo-bottom-mob {
+    height: 12vh;
+  }
+
+  .logo-top,
+  .logo-bottom {
+    display: none;
+  }
+
+  .copyright-text {
+    bottom: 30vh;
+    font-size: 10px;
+    right: -20px;
+  }
+}
