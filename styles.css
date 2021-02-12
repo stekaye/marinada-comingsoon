@@ -127,7 +127,7 @@ body, * {
 .image-slideshow li img { 
   z-index: 500;
   position: absolute;
-  width: 300px;
+  width: 25vw;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
@@ -137,15 +137,15 @@ body, * {
 
 .image-slideshow li div h3 { 
   font-family: 'MadeMirage';
-  font-size: 30px;
+  font-size: 43px;
   font-weight: 700;
   left: 50%;
   padding: 0;
   position: absolute;
-  line-height: 40px; 
+  line-height: 55px; 
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
+  width: 25vw;
 }
 
 .image-slideshow li:nth-child(1) span { 
@@ -212,6 +212,18 @@ body, * {
   }
 
 /* ******** ******** MEDIA QUERIES ******** ******** */
+
+@media screen and (max-width: 1200px) { 
+  .image-slideshow li img { 
+    width: 300px;
+  }
+  
+  .image-slideshow li div h3 { 
+    font-size: 30px;
+    line-height: 45px; 
+    width: 300px;
+  }
+}
 
 @media screen and (max-width: 600px) { 
   .image-slideshow li div h3 { 
