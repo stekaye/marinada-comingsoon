@@ -137,12 +137,12 @@ body, * {
 
 .image-slideshow li div h3 { 
   font-family: 'MadeMirage';
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 700;
   left: 50%;
   padding: 0;
   position: absolute;
-  line-height: 40px; 
+  line-height: 48px; 
   top: 50%;
   transform: translate(-50%, -50%);
   width: 300px;
@@ -263,14 +263,38 @@ body, * {
   }
 }
 
-@media screen and (min-width: 1200px) { 
+@media screen and (min-width: 1300px) { 
   .image-slideshow li img { 
-    width: 25vw;
+    width: 350px;
   }
   
   .image-slideshow li div h3 { 
-    font-size: 43px;
+    font-size: 36px;
+    line-height: 52px; 
+    width: 350px;
+  }
+}
+
+@media screen and (min-width: 1600px) { 
+  .image-slideshow li img { 
+    width: 410px;
+  }
+  
+  .image-slideshow li div h3 { 
+    font-size: 42px;
     line-height: 55px; 
-    width: 25vw;
+    width: 410px;
+  }
+}
+
+@media screen and (min-width: 1800px) { 
+  .image-slideshow li img { 
+    width: 470px;
+  }
+  
+  .image-slideshow li div h3 { 
+    font-size: 47px;
+    line-height: 60px; 
+    width: 470px;
   }
 }
