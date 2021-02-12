@@ -127,7 +127,7 @@ body, * {
 .image-slideshow li img { 
   z-index: 500;
   position: absolute;
-  height: 140px;
+  width: 300px;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
@@ -145,6 +145,7 @@ body, * {
   line-height: 40px; 
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 300px;
 }
 
 .image-slideshow li:nth-child(1) span { 
@@ -177,9 +178,10 @@ body, * {
 
 .image-slideshow li:nth-child(1) img.logo-top,
 .image-slideshow li:nth-child(1) img.logo-top-mob { 
-  top: 0;
+  top: -20px;
   animation-delay: 3s; 
 }
+
 .image-slideshow li:nth-child(1) img.logo-bottom,
 .image-slideshow li:nth-child(1) img.logo-bottom-mob { 
   bottom: 0;
@@ -213,9 +215,9 @@ body, * {
 
 @media screen and (max-width: 600px) { 
   .image-slideshow li div h3 { 
-    font-size: 22px; 
+    font-size: 5.8vw; 
     line-height: 28px;
-    width: 100vw;
+    width: 55vw;
   }
 
   .image-slideshow li:nth-child(1) span { 
@@ -238,14 +240,15 @@ body, * {
     background-image: url(./images/mobile/marinada_homes_mobile_05.jpg);
   }
 
-  .logo-top-mob,
-  .logo-bottom-mob {
+  .image-slideshow li img.logo-bottom-mob,
+  .image-slideshow li img.logo-top-mob {
     display: block;
+    width: 55vw;
   }
 
-  .image-slideshow li img.logo-bottom-mob {
-    height: 12vh;
-  }
+.image-slideshow li:nth-child(1) img.logo-top-mob { 
+  top: 0;
+}
 
   .logo-top,
   .logo-bottom {
