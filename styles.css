@@ -58,6 +58,18 @@
   100% { opacity: 1 }
 }
 
+@keyframes logoSlideDownAnimation { 
+  0% { opacity: 0; transform: translate(-50%, -100%); animation-timing-function: ease-in; }
+  3% { opacity: 1; transform: translate(-50%, 0%); animation-timing-function: ease-out;}
+  100% { opacity: 1; transform: translate(-50%, 0%);}
+}
+
+@keyframes logoSlideUpAnimation { 
+  0% { opacity: 0; transform: translate(-50%, 100%); animation-timing-function: ease-in; }
+  3% { opacity: 1; transform: translate(-50%, 0%); animation-timing-function: ease-out;}
+  100% { opacity: 1; transform: translate(-50%, 0%);}
+}
+
 /* ******** ******** GLOBAL ******** ******** */
 
 body, * {
@@ -120,8 +132,8 @@ body, * {
   bottom: 30px;
   text-align: center;
   color: #fff;
-  animation: titleAnimation 3s ease-in forwards; 
-  -webkit-animation: titleAnimation 3s ease-in forwards;
+  animation: titleAnimation 24s ease-in forwards; 
+  -webkit-animation: titleAnimation 24s ease-in forwards;
 }
 
 .image-slideshow li img { 
@@ -131,8 +143,23 @@ body, * {
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
+}
+
+.image-slideshow li img.appear { 
   animation: logoAnimation 24s ease-in forwards; 
   -webkit-animation: logoAnimation 24s ease-in forwards;
+}
+
+.image-slideshow li img.logo-top-mob { 
+  transform: translate(-50%, -100%);
+  animation: logoSlideDownAnimation 24s ease-in forwards; 
+  -webkit-animation: logoSlideDownAnimation 24s ease-in forwards;
+}
+
+.image-slideshow li img.logo-bottom-mob { 
+  bottom: 0;
+  animation: logoSlideUpAnimation 24s ease-in forwards; 
+  -webkit-animation: logoSlideUpAnimation 24s ease-in forwards;
 }
 
 .image-slideshow li div h3 { 
@@ -265,7 +292,7 @@ body, * {
 }
 
 @media screen and (min-width: 1300px) { 
-  .image-slideshow li img { 
+  .image-slideshow li img.appear { 
     width: 40vh;
   }
   
@@ -277,7 +304,7 @@ body, * {
 }
 
 @media screen and (min-width: 1600px) { 
-  .image-slideshow li img { 
+  .image-slideshow li img.appear { 
     width: 410px;
   }
   
@@ -289,7 +316,7 @@ body, * {
 }
 
 @media screen and (min-width: 1800px) { 
-  .image-slideshow li img { 
+  .image-slideshow li img.appear { 
     width: 470px;
   }
   
